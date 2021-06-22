@@ -23,7 +23,7 @@ de archivo binario. O bien obtener una copia de respaldo de dichos archivos que 
 Internet. En concreto dichos archivos deberán coincidir con el ROMSET 3 de MAME (ver aliens3.zip):
 
 ```
-	875_c01.c24
+	875_w3_1.c24
 	875_w3_2.e24
 	875_b03.g04
 	875b11.k13
