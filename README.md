@@ -75,6 +75,6 @@ si no se mostrará una imagen totalmente distorsionada, ya que funciona en modo 
 En concreto lo he probado en MacOS Big Sur (ITerm2, Terminal) y terminal de Windows 10 (cmd y WSL2 Ubuntu).
 Las capacidades del terminal deben permitir una paleta de 256 colores, lo que permite mostrar al mismo tiempo
 los colores de las capas de tiles (FIX, LAYER-A, LAYER-B) que utilizan 192 colores (64 colores cada capa).
-La capa de sprites no está implementada pero necesitaría 256 colores independientes de los de los tiles
- para ella por lo que no se podrían mostrar de manera simultánea con las capas de tiles en modo de texto curses,
- ya que se utilizan 192 + 256 colores en total.
+La capa de sprites no está implementada pero necesitaría 256 colores de paleta adicionalmente a los colores de los tiles, 
+ por lo que no se podrían mostrar de manera simultánea los sprites y las capas de tiles en modo de texto curses,
+ ya que se utilizarían 192 + 256 colores en total.
