@@ -1,0 +1,11 @@
+eproms/
+.vscode/
+__pycache__
+aliens_machine.build
+.last_tmp.py
+*.asm 
+*.lst
+*.code-workspace
+*.bin 
+*.lst
+*.log

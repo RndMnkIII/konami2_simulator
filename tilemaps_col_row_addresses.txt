@@ -1,0 +1,97 @@
+﻿                                                                       |00  01  02  03  04  05  06  07  08  09  0A  0B  0C  0D  0E  0F  10  11  12  13  14  15  16  17  18  19  1A  1B  1C  1D  1E  1F  20  21  22  23 |                                      
+                00  01  02  03  04  05  06  07  08  09  0A  0B  0C  0D  0E  0F  10  11  12  13  14  15  16  17  18  19  1A  1B  1C  1D  1E  1F  20  21  22  23  24  25  26  27  28  29  2A  2B  2C  2D  2E  2F  30  31  32  33  34  35  36  37  38  39  3A  3B  3C  3D  3E  3F
+0x00    0x2000:
+0x01    0x2040:
+        -------
+0x02    0x2080:
+0x03    0x20C0:
+0x04    0x2100:
+0x05    0x2140:
+0x06    0x2180:
+0x07    0x21C0:
+0x08    0x2200:
+0x09    0x2240:
+0x0A    0x2280:
+0x0B    0x22C0:
+0x0C    0x2300:
+0x0D    0x2340:
+0x0E    0x2380:
+0x0F    0x23C0:
+0x10    0x2400:
+0x11    0x2440:
+0x12    0x2480:
+0x13    0x24C0:
+0x14    0x2500:
+0x15    0x2540:
+0x16    0x2580:
+0x17    0x25C0:
+0x18    0x2600:
+0x19    0x2640:
+0x1A    0x2680:
+0x1B    0x26C0:
+0x1C    0x2700:
+0x1D    0x2740:
+        -------
+0x1E    0x2780:
+0x1F    0x27C0:
+
+
+2000-27ff FIX CODE              RAM IC G23 G15-8
+2800-2fff LAYER A CODE          RAM IC G23 G15-8
+3000-37ff LAYER B CODE          RAM IC G23 G15-8
+
+0000-07ff FIX ATTRIB("COLOR")   RAM IC I23: G07-0
+0800-0fff FIX ATTRIB("COLOR")   RAM IC I23: G07-0
+1000-17ff FIX ATTRIB("COLOR")   RAM IC I23: G07-0
+
+FIX CODE:
+ROW_START = 0x80
+ROW_END = 0x740
+COL_START = 0X0E
+COL_END = 0X31
+SCROLL_X +/- 112 pixels
+SCROLL_Y +/- 16 pixels
+
+for row in range (0x80,0x780, 0x40):
+    for col in range (0x0e, 0x32):
+        tile_index = row + col
+        
+fix_base_code = 0x2000
+fix_base_attr = 0x0        
+for row in range (0,28): #0-224
+    for col in range (0,36): #0-288
+        tile_index = fix_base_code + ROW_START + (row<<6) + COL_START + col
+
+ROW_START = 0x02
+ROW_END = 0x1D
+COL_START = 0X0E
+COL_END = 0X31
+FIX_CODE_BASE = 0x2000
+FIX_ATTR_BASE = 0X0
+LAYER_A_CODE_BASE = 0X2800
+LAYER_A_ATTR_BASE = 0X0800
+LAYER_B_CODE_BASE = 0X3000
+LAYER_B_ATTR_BASE = 0X1000
+NUM_LAYER=0 FIX, 1 LAYER_A, 2 LAYER_B
+
+row_table = [0x0000, 0x0040, 0x0080, 0x00C0, 0x0100, 0x0140, 0x0180, 0x01C0, 0x0200, 0x0240, 0x0280, 0x02C0, 0x0300, 0x0340, 0x0380, 0x03C0, 0x0400, 0x0440, 0x0480, 0x04C0, 0x0500, 0x0540, 0x0580, 0x05C0, 0x0600, 0x0640, 0x0680, 0x06C0, 0x0700, 0x0740, 0x0780, 0x07C0 ]
+#col_table = [00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F, 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C, 0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x3A, 0x3B, 0x3C, 0x3D, 0x3E, 0x3F]
+
+for row in range (0,28): #0-224
+    for col in range (0,36): #0-288
+        tile_index = row_table[ROW_START + row] + COL_START + col
+        
+        code = self.m_memory.read_RAM_entry_data(3,FIX_CODE_BASE+tile_index)
+        attr = self.m_memory.read_RAM_entry_data(3,FIX_ATTR_BASE+tile_index)
+        bank = self.m_memory.m_k052109_charrombank[(attr & 0x0C)>>2]
+        flags = 0
+        priority = 0
+        
+        attr = (attr & 0xf3) | ((bank & 0x03)<<2)
+        bank >>=2
+        flipy = attr  0x02
+        
+        code |= ((attr & 0x3f) << 8) | (bank << 14)
+        color = (NUM_LAYER<<2) + ((attr & 0xc0) >> 6) # 2 bits superiores segun la capa (FIX 00, LAYER A 01, LAYER B 10), 2 bits inferiores
+        if(flipy and (m_tileflip_enable & 0x2)):
+            #flags &=~TILE_FLIPX
