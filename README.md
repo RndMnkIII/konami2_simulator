@@ -4,7 +4,7 @@
 !["Simulator Screen Capture 2](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap02.png)
 !["Simulator Screen Capture 3](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap03.png)
 
-## English translation:
+## English:
 This project is a simulator of the Konami-2 CPU used in various Konami arcade machines from the late 80's and early 90's. It is a unique development based on the MC6809 8-bit CPU running at a higher speed (3MHz) and with certain features borrowed from the 68000 CPU such as the use of signals to control the system bus asynchronously (AS, DTAC ). It is not an emulator designed to play, in fact it is horribly slow. It is primarily intended to study the operation of said CPU using an implementation of a game as an example. It is based fundamentally on the MAME source code, so this recognition is mentioned here, but all the part of the mapping in memory of devices (memory_mapper.py) and the memory for the color palette (CRAM) is based mainly on the schematics of the original hardware and does not follow the scheme implemented by MAME. The purpose is to allow a study platform to help be implemented in an FPGA using a hardware description language (HDL), Verilog or VHDL.
 
 For it to work properly you must unzip the content of the repository into a folder. Inside that folder you must create another called eproms where you must copy the Aliens game files (Romset). You must be the original owner of said ROMS that will be contained in the pcb of said game and dump them to a binary file format. Or obtain a backup copy of these files that you can find on various sites on the Internet. Specifically, these files must match MAME ROMSET 3 (see aliens3.zip):
@@ -79,4 +79,3 @@ los colores de las capas de tiles (FIX, LAYER-A, LAYER-B) que utilizan 192 color
 La capa de sprites no está implementada pero necesitaría 256 colores independientes de los de los tiles
  para ella por lo que no se podrían mostrar de manera simultánea con las capas de tiles en modo de texto curses,
  ya que se utilizan 192 + 256 colores en total.
- 
