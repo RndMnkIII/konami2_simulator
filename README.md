@@ -1,6 +1,6 @@
 # Konami-2 CPU + Aliens Arcade Simulator in Python 3
 
-!["Simulator Screen Capture 1](https://github.com/RndMnkIII//konami2_simulator/blob/main/img/cap01.png)
+!["Simulator Screen Capture 1](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap01.png)
 !["Simulator Screen Capture 2](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap02.png)
 !["Simulator Screen Capture 3](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap03.png)
 
