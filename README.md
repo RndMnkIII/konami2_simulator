@@ -36,7 +36,7 @@ funcionando a una velocidad más elevada (3MHz) y con ciertas características t
 tales como el uso de señales para controlar el bus del sistema de forma asíncrona (AS, DTAC).
 No se trata de un emulador pensado para jugar, de hecho es horriblemente lento. Está pensado fundamentalmente
 para estudiar el funcionamiento de dicha CPU utilizando como ejemplo una implementación de un juego.
-Está basado fundamentalmente en el código fuente de MAME por lo se menciona aquí dicho reconomiento, pero toda
+Está basado fundamentalmente en el código fuente de MAME por lo que se menciona aquí dicho reconomiento, pero toda
 la parte del mapeo en memoria de dispositivos (`memory_mapper.py`) y la memoria para la paleta de colores (CRAM)
 está basado mayormente en los esquemáticos del hardware original y no sigue el esquema implementado por MAME.
 La finalidad es permitir una plataforma de estudio para ayudar a ser implementado en una FPGA utilizando un
