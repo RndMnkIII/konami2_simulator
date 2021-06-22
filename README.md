@@ -7,7 +7,7 @@
 ## English:
 This project is a simulator of the Konami-2 CPU used in various Konami arcade machines from the late 80's and early 90's. It is a unique development based on the MC6809 8-bit CPU running at a higher speed (3MHz) and with certain features borrowed from the 68000 CPU such as the use of signals to control the system bus asynchronously (AS, DTAC ). It is not an emulator designed to play, in fact it is horribly slow. It is primarily intended to study the operation of said CPU using an implementation of a game as an example. It is based fundamentally on the MAME source code, so this recognition is mentioned here, but all the part of the mapping in memory of devices (memory_mapper.py) and the memory for the color palette (CRAM) is based mainly on the schematics of the original hardware and does not follow the scheme implemented by MAME. The purpose is to allow a study platform to help be implemented in an FPGA using a hardware description language (HDL), Verilog or VHDL.
 
-For it to work properly you must unzip the content of the repository into a folder. Inside that folder you must create another called `eproms` where you must copy the Aliens game files (Romset). You must be the original owner of said ROMS that will be contained in the pcb of said game and dump them to a binary file format. Or obtain a backup copy of these files that you can find on various sites on the Internet. Specifically, these files must match MAME ROMSET 3 (see aliens3.zip):
+For it to work properly you must unzip the content of the repository into a folder. Inside that folder you must create another called `eproms` where you must copy the Aliens game ROM files (Romset). You must be the original owner of said ROMS that will be contained in the pcb of said game and dump them to a binary file format. Or obtain a backup copy of these files that you can find on various sites on the Internet. Specifically, these files must match MAME ROMSET 3 (see aliens3.zip):
 ```
 	875_w3_1.c24
 	875_w3_2.e24
@@ -43,7 +43,7 @@ La finalidad es permitir una plataforma de estudio para ayudar a ser implementad
 lenguaje de descripción de hardware (HDL), Verilog o VHDL.
 
 Para que funcione adecuadamente debes descomprimir el contenido del repositorio dentro de una carpeta.
-Dentro de esa carpeta debes crear otra llamada `eproms` donde deberas copiar los archivos del juego Aliens (Romset ).
+Dentro de esa carpeta debes crear otra llamada `eproms` donde deberas copiar los archivos de las ROM del juego Aliens (Romset ).
 Debes ser el poseedor original de dichas ROMS que estarán contenidas en la pcb de dicho juego y volcarlas a un formato
 de archivo binario. O bien obtener una copia de respaldo de dichos archivos que podrás encontrar en diversos sitios en
 Internet. En concreto dichos archivos deberán coincidir con el ROMSET 3 de MAME (ver aliens3.zip):
