@@ -1,8 +1,8 @@
 # Konami-2 CPU + Aliens Arcade Simulator in Python 3
 
-!["Simulator Screen Capture 1](https://github.com/RndMnkIII/k051962_verilog/blob/main/img/cap01.png)
-!["Simulator Screen Capture 2](https://github.com/RndMnkIII/k051962_verilog/blob/main/img/cap02.png)
-!["Simulator Screen Capture 3](https://github.com/RndMnkIII/k051962_verilog/blob/main/img/cap03.png)
+!["Simulator Screen Capture 1](https://github.com/RndMnkIII//konami2_simulator/blob/main/img/cap01.png)
+!["Simulator Screen Capture 2](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap02.png)
+!["Simulator Screen Capture 3](https://github.com/RndMnkIII/konami2_simulator/blob/main/img/cap03.png)
 
 Este proyecto es un simulador de la CPU Konami-2 empleada en varias máquinas arcade de Konami de
 finales de los 80's y principios de los 90's. Es un desarrollo único basado en la CPU de 8-bit MC6809
