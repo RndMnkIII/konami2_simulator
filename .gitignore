@@ -9,3 +9,4 @@ aliens_machine.build
 *.bin 
 *.lst
 *.log
+.DS_Store
