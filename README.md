@@ -27,7 +27,7 @@ To run the simulation you must have a version of Python 3 that supports Type Hin
 
 `python3 aliens_machine.py`
 
-Keep in mind that you have to use a terminal that can arbitrarily decrease the size of the text so that it will not be possible to read it since there is a size of at least 670x240 characters on a screen with a typical resolution of 1920x1080. if not a totally distorted image will be displayed, as it works in text mode curses with color. Specifically, I have tested it on MacOS Big Sur (ITerm2, Terminal) and Windows 10 terminal (cmd and WSL2 Ubuntu). The terminal capabilities must allow a 256 color palette, which allows the colors of the tile layers (FIX, LAYER-A, LAYER-B) to be displayed at the same time that use 192 colors (64 colors each layer). The sprite layer is not implemented but it would need 256 colors independent of the tiles for it, so they could not be displayed simultaneously with the tile layers in curses text mode, since 192 + 256 colors are used in total.
+Keep in mind that you have to be able to decrease the terminal font size to a very small value to be able to set at least 670x240 characters size window on a screen with a typical resolution of 1920x1080. if not a totally distorted image will be displayed, as it works in text mode curses with color. Specifically, I have tested it on MacOS Big Sur (ITerm2, Terminal) and Windows 10 terminal (cmd and WSL2 Ubuntu). The terminal capabilities must allow a 256 color palette, which allows the colors of the tile layers (FIX, LAYER-A, LAYER-B) to be displayed at the same time that use 192 colors (64 colors each layer). The sprite layer is not implemented but it would need 256 colors independent of the tiles for it, so they could not be displayed simultaneously with the tile layers in curses text mode, since 192 + 256 colors are used in total.
 
 ## Español:
 Este proyecto es un simulador de la CPU Konami-2 empleada en varias máquinas arcade de Konami de
@@ -70,8 +70,7 @@ Para ejecutar abre un terminal e introduce:
 
 `python3 aliens_machine.py`
 
-Ten en cuenta que tienes que utilizar un terminal que pueda disminuir de forma arbitraria el tamaño del texto de manera
-que no será posible leerlo ya que hay un obtener un tamaño de al menos 670x240 caracteres en una pantalla con una resolución típica de 1920x1080.
+Ten en cuenta que deberás utilizar una ventana de terminal en la que puedas establecer un tamaño de fuente muy pequeño, lo suficiente para crear un ventana de terminal de 670x240 caracteres en una pantalla con una resolución típica de 1920x1080.
 si no se mostrará una imagen totalmente distorsionada, ya que funciona en modo de texto curses con color.
 En concreto lo he probado en MacOS Big Sur (ITerm2, Terminal) y terminal de Windows 10 (cmd y WSL2 Ubuntu).
 Las capacidades del terminal deben permitir una paleta de 256 colores, lo que permite mostrar al mismo tiempo
