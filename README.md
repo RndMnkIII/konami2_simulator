@@ -8,7 +8,7 @@ Este proyecto es un simulador de la CPU Konami-2 empleada en varias máquinas ar
 finales de los 80's y principios de los 90's. Es un desarrollo único basado en la CPU de 8-bit MC6809
 funcionando a una velocidad más elevada (3MHz) y con ciertas características tomadas de la CPU 68000
 tales como el uso de señales para controlar el bus del sistema de forma asíncrona (AS, DTAC).
-No se trata de un emulador pensado para jugar, de ello es horriblemente lento. Está pensado fundamentalmente
+No se trata de un emulador pensado para jugar, de hecho es horriblemente lento. Está pensado fundamentalmente
 para estudiar el funcionamiento de dicha CPU utilizando como ejemplo una implementación de un juego.
 Está basado fundamentalmente en el código fuente de MAME por lo se menciona aquí dicho reconomiento, pero toda
 la parte del mapeo en memoria de dispositivos (`memory_mapper.py`) y la memoria para la paleta de colores (CRAM)
